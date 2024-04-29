@@ -6,11 +6,13 @@ services:
     ports:
       - '5432:5432'
     environment:
-      - POSTGRES_USER=docker
+      - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=docker
       - POSTGRES_DB=atac
     volumes:
       - polls_pg_data:/bitnami/postgresql
+
+    restart: always    
 
 volumes:
   polls_pg_data:
